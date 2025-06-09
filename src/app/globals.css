@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    @apply text-neutral-800 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-semibold text-primary-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-900 hover:bg-primary-800 text-white font-medium py-3 px-6 rounded-brand transition-all duration-300 shadow-brand hover:shadow-brand-hover transform hover:-translate-y-1 active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent-700 hover:bg-accent-800 text-white font-medium py-3 px-6 rounded-brand transition-all duration-300 shadow-brand hover:shadow-brand-hover transform hover:-translate-y-1 active:translate-y-0;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-white font-medium py-3 px-6 rounded-brand transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white rounded-brand shadow-brand hover:shadow-brand-hover transition-all duration-300 transform hover:-translate-y-2;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(27, 94, 32, 0.8) 0%, rgba(56, 142, 60, 0.6) 100%);
+  }
+  
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 rounded-brand border border-neutral-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-colors duration-200;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B5E20;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2E7D32;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 
